@@ -1,0 +1,6 @@
+framework module I18n_RxSwift {
+  umbrella header "I18n-RxSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,15 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'I18n-RxSwift_Example' do
+  pod 'I18n-RxSwift', :path => '../'
+
+  pod 'R.swift', '~> 7.3.2'
+  
+  target 'I18n-RxSwift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

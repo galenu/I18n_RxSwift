@@ -1,0 +1,42 @@
+PODS:
+  - I18n-RxSwift (0.1.0):
+    - "NSObject+Rx"
+    - RxCocoa
+    - RxSwift
+  - "NSObject+Rx (5.2.2)":
+    - RxSwift (~> 6.2)
+  - R.swift (7.3.2)
+  - RxCocoa (6.7.1):
+    - RxRelay (= 6.7.1)
+    - RxSwift (= 6.7.1)
+  - RxRelay (6.7.1):
+    - RxSwift (= 6.7.1)
+  - RxSwift (6.7.1)
+
+DEPENDENCIES:
+  - I18n-RxSwift (from `../`)
+  - R.swift (~> 7.3.2)
+
+SPEC REPOS:
+  trunk:
+    - "NSObject+Rx"
+    - R.swift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+EXTERNAL SOURCES:
+  I18n-RxSwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  I18n-RxSwift: dc4e6f2e9bc37ee04b2a9ecc48a19d51718a53b6
+  "NSObject+Rx": 61cf1f7306a73dcef8b36649198af0813ec18dfd
+  R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
+  RxCocoa: f5609cb4637587a7faa99c5d5787e3ad582b75a4
+  RxRelay: 4151ba01152436b08271e08410135e099880eae5
+  RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
+
+PODFILE CHECKSUM: b4474661bde42dedde1eececb841fde34c7268c7
+
+COCOAPODS: 1.15.2
