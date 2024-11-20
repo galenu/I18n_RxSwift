@@ -24,28 +24,4 @@ extension String {
         }
         return String(format: string, locale: locale, arguments: args)
     }
-    
-    public func i18n(tableName: String? = nil,
-                     bundle: Bundle,
-                     defaultBundle: Bundle? = nil,
-                     value: String = "",
-                     comment: String = "",
-                     locale: Locale? = nil,
-                     args: [CVarArg] = []) -> I18nDynamicValue<String> {
-        return .init({
-            return self.i18n(tableName: tableName, bundle: bundle, defaultBundle: defaultBundle, value: value, comment: comment, locale: locale, args: args)
-        })
-    }
-    
-    public func i18n(tableName: String? = nil,
-                     bundle: Bundle,
-                     defaultBundle: Bundle? = nil,
-                     value: String = "",
-                     comment: String = "",
-                     locale: Locale? = nil,
-                     args: [CVarArg] = []) -> I18nDynamicValue<String?> {
-        return .init({
-            return self.i18n(tableName: tableName, bundle: bundle, defaultBundle: defaultBundle, value: value, comment: comment, locale: locale, args: args)
-        })
-    }
 }

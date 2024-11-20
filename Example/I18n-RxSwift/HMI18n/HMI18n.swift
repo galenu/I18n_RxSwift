@@ -6,7 +6,6 @@
 //  Copyright © 2024 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import I18n_RxSwift
 
 /// 语言类型
@@ -27,6 +26,7 @@ public class HMI18n {
     public var defaultLanguageBundle: Bundle!
     
     public static let shared = HMI18n()
+    public let service = I18nService()
     
     private init() {
         self.languageType = .en
@@ -37,7 +37,7 @@ public class HMI18n {
     public func switchLanguage(_ type: HMLanguageType) {
         self.languageType = type
         self.updateLanguageBundle()
-        I18nObservable.shared.switchLanguage()
+        self.service.switchLanguage(languageType.rawValue)
     }
     
     private func updateLanguageBundle() {

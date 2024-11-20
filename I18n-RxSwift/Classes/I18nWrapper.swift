@@ -5,6 +5,7 @@
 //  Created by CNCEMN188807 on 2024/11/5.
 //
 import Foundation
+import RxSwift
 
 public protocol I18nCompatible {
     associatedtype CompatibleType

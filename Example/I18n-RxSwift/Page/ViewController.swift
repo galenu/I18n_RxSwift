@@ -10,15 +10,9 @@ import UIKit
 import I18n_RxSwift
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var wtiteThemeBtn: UIButton!
-    
-    @IBOutlet weak var blackThemeBtn: UIButton!
-    
+        
     @IBOutlet weak var label: HMLable!
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
+        
     @IBOutlet weak var btn: UIButton!
     
     
@@ -29,7 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.i18n.changed = .init({
+        self.i18n.changed = .i18n({
             print("语言改变: \(HMI18n.shared.languageType)")
         })
 
@@ -37,7 +31,7 @@ class ViewController: UIViewController {
         
         btn.i18n.setTitle(RString.ptl_connect_partybox(), for: .normal)
                 
-        btn.i18n.setAttributedTitle(.init({
+        btn.i18n.setAttributedTitle(.i18n({
             let text = RString.ptl_connect_partybox() + "11111" + RString.ptl_light_controls()
             let attr = NSAttributedString(string: text)
             return attr
@@ -45,13 +39,6 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func whiteThemeBtnClick(_ sender: Any) {
-        
-    }
-    
-    @IBAction func blackThemeBtnClick(_ sender: Any) {
-        
-    }
     @IBAction func languageBtnClick(_ sender: Any) {
         HMI18n.shared.switchLanguage(HMI18n.shared.languageType == .en ? .zhHans : .en)
     }

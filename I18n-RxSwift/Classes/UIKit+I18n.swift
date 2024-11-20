@@ -6,21 +6,24 @@
 //
 
 import RxSwift
-import RxCocoa
 import NSObject_Rx
 
 extension I18nWrapper where Base: UIButton {
     
     public func setTitle(_ value: I18nDynamicValue<String>, for state: UIControl.State) {
-        I18nObservable.shared.subject.subscribe { [weak base] _ in
-            base?.setTitle(value.dynamicValue(), for: state)
-        }.disposed(by: base.rx.disposeBag)
+        value.observable
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak base] _ in
+                base?.setTitle(value.dynamicValue(), for: state)
+            }).disposed(by: self.base.rx.disposeBag)
     }
     
     public func setAttributedTitle(_ value: I18nDynamicValue<NSAttributedString>, for state: UIControl.State) {
-        I18nObservable.shared.subject.subscribe { [weak base] _ in
-            base?.setAttributedTitle(value.dynamicValue(), for: state)
-        }.disposed(by: base.rx.disposeBag)
+        value.observable
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak base] _ in
+                base?.setAttributedTitle(value.dynamicValue(), for: state)
+            }).disposed(by: self.base.rx.disposeBag)
     }
 }
 

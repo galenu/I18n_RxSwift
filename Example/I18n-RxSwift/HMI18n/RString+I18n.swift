@@ -15,24 +15,17 @@ let RString = R.string.localizable.self
 let RStoryboard = R.storyboard.self
 //let RNib = R.nib.self
 
-extension String {
-    func localized(_ args: [CVarArg] = []) -> String {
-        return self.i18n(bundle: HMI18n.shared.currentLanguageBundle, defaultBundle: HMI18n.shared.defaultLanguageBundle, args: args)
-    }
-}
-
 extension StringResource {
-    
     func callAsFunction() -> String {
         return self.key.description.localized()
     }
     func callAsFunction() -> I18nDynamicValue<String> {
-        return I18nDynamicValue<String>.init({
+        return .i18n({
             return self.callAsFunction()
         })
     }
     func callAsFunction() -> I18nDynamicValue<String?> {
-        return I18nDynamicValue<String?>.init({
+        return .i18n({
             return self.callAsFunction()
         })
     }
@@ -43,12 +36,12 @@ extension StringResource1 {
         return self.key.description.localized([arg1])
     }
     func callAsFunction(_ arg1: Arg1) -> I18nDynamicValue<String> {
-        return I18nDynamicValue<String>.init({
+        return .i18n({
             return self.callAsFunction(arg1)
         })
     }
     func callAsFunction(_ arg1: Arg1) -> I18nDynamicValue<String?> {
-        return I18nDynamicValue<String?>.init({
+        return .i18n({
             return self.callAsFunction(arg1)
         })
     }
@@ -58,12 +51,12 @@ extension StringResource2 {
         return self.key.description.localized([arg1, arg2])
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2) -> I18nDynamicValue<String> {
-        return I18nDynamicValue<String>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2)
         })
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2) -> I18nDynamicValue<String?> {
-        return I18nDynamicValue<String?>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2)
         })
     }
@@ -73,12 +66,12 @@ extension StringResource3 {
         return self.key.description.localized([arg1, arg2, arg3])
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3) -> I18nDynamicValue<String> {
-        return I18nDynamicValue<String>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2, arg3)
         })
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3) -> I18nDynamicValue<String?> {
-        return I18nDynamicValue<String?>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2, arg3)
         })
     }
@@ -88,12 +81,12 @@ extension StringResource4 {
         return self.key.description.localized([arg1, arg2, arg3, arg4])
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4) -> I18nDynamicValue<String> {
-        return I18nDynamicValue<String>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2, arg3, arg4)
         })
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4) -> I18nDynamicValue<String?> {
-        return I18nDynamicValue<String?>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2, arg3, arg4)
         })
     }
@@ -103,12 +96,12 @@ extension StringResource5 {
         return self.key.description.localized([arg1, arg2, arg3, arg4, arg5])
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5) -> I18nDynamicValue<String> {
-        return I18nDynamicValue<String>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2, arg3, arg4, arg5)
         })
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5) -> I18nDynamicValue<String?> {
-        return I18nDynamicValue<String?>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2, arg3, arg4, arg5)
         })
     }
@@ -118,12 +111,12 @@ extension StringResource6 {
         return self.key.description.localized([arg1, arg2, arg3, arg4, arg5, arg6])
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6) -> I18nDynamicValue<String> {
-        return I18nDynamicValue<String>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2, arg3, arg4, arg5, arg6)
         })
     }
     func callAsFunction(_ arg1: Arg1, _ arg2: Arg2, _ arg3: Arg3, _ arg4: Arg4, _ arg5: Arg5, _ arg6: Arg6) -> I18nDynamicValue<String?> {
-        return I18nDynamicValue<String?>.init({
+        return .i18n({
             return self.callAsFunction(arg1, arg2, arg3, arg4, arg5, arg6)
         })
     }
