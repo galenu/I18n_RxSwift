@@ -20,6 +20,22 @@ it, simply add the following line to your Podfile:
 pod 'I18n-RxSwift'
 ```
 
+```
+self.i18n.changed = .i18n({
+   print("语言改变: \(HMI18n.shared.languageType)")
+})
+
+label.i18n.text = RString.ptl_brightness("10")
+        
+btn.i18n.setTitle(RString.ptl_connect_partybox(), for: .normal)
+                
+btn.i18n.setAttributedTitle(.i18n({
+   let text = RString.ptl_connect_partybox() + "11111" + RString.ptl_light_controls()
+   let attr = NSAttributedString(string: text)
+   return attr
+}), for: .normal)
+```
+
 ## Author
 
 galenu, 250167616@qq.com
